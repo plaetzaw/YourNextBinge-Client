@@ -5,6 +5,7 @@ const Home = () => {
     <>
       <div>
         Home
+        <i className="fab fa-medapps"></i>
       </div>
     </>
   )
