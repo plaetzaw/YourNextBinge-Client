@@ -1,11 +1,13 @@
-/* * {
+* {
   margin: 0;
-  font-family: "Quicksand";
-  color: #333;
-  background-color: #d5d5d1;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "PT Sans", sans-serif;
+  /* color: #333; */
+  /* background-color: #d5d5d1; */
 }
 
-.content {
+/* .content {
   max-width: 90%;
   margin: 40px auto;
   padding: 20px;

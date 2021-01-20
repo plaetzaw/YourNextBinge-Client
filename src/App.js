@@ -1,6 +1,10 @@
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Navbar from './components/Navbar/Navbar';
-import Home from './components/Home'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Home from './components/pages/Home';
+import Movies from './components/pages/Movies';
+import TVShows from './components/pages/TVShows';
+import People from './components/pages/People'
+
 import './index.css'
 
 
@@ -8,14 +12,12 @@ function App() {
   return (
     <Router>
       <Navbar/>
-    <div className="content">
-    <Switch>
-      <Route path="/" component={Home}/>
-      <Route path="/movies" component={Home}/>
-      <Route path="/tvshows" component={Home}/>
-      <Route path="/people" component={Home}/>
-    </Switch>
-    </div>
+        <Switch>
+          <Route exact path="/" component={Home}/>
+          <Route path="/movies" component={Movies}/>
+          <Route path="/tvshows" component={TVShows}/>
+          <Route path="/people" component={People}/>
+      </Switch>
     </Router>
   );
 }
