@@ -34,14 +34,7 @@ const Movies = () => {
       <h1>Movies</h1>
       {error && <div><h1>{error}</h1></div>}
       { isPending && <div><h2>Data is Loading...</h2></div>}
-      {movies && 
-      <>{movies.data.results.map((movie) => {
-    return <div key={movie.id}>
-    {movie.title}
-    <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title}/>
-    </div>
-  })}</>
-  }
+      {movies && <MovieCard movies={movies} />}
     </>
   )
 }
