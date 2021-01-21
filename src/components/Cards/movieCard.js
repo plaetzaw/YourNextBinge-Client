@@ -4,6 +4,7 @@ import { CardMedia } from '@material-ui/core'
 import { Button } from '@material-ui/core'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { Link } from 'react-router-dom';
 
 
 const MovieCard = ({ movies }) => {
@@ -47,11 +48,12 @@ const MovieCard = ({ movies }) => {
               alt={movie.title}
               src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
               />  
+                <Link to={`/movie/${movie.id}`}>
                 <Button 
                 // onClick={handleMovie}
                 >
                  <p className="centerText"><b>View Full Information</b></p></Button>
-      
+                 </Link>
             </Card>    
         </div>
       })
