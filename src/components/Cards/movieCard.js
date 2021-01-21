@@ -34,28 +34,35 @@ const MovieCard = ({ movies }) => {
     //     dispatch(GetMovieInfo(idObj));
     //   }
 
+
+    let markup = movies.data.results.map((movie) => {
+        return <div key={movie.id}>
+                {movie.title}
+        <Card
+            className="miniCard"
+            >
+              <CardMedia
+              className="posterMini"
+              component="img"
+              alt={movie.title}
+              src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+              />  
+                <Button 
+                // onClick={handleMovie}
+                >
+                 <p className="centerText"><b>View Full Information</b></p></Button>
+      
+            </Card>    
+        </div>
+      })
+
       return (
       <>
-       let markup = {movies.data.results.map((movie) => {
-    return <div key={movie.id}>
-            {movie.title}
-    <Card
-        className="miniCard"
-        >
-          <CardMedia
-          className="posterMini"
-          component="img"
-          alt={movie.title}
-          src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
-          />  
-            <Button 
-            // onClick={handleMovie}
-            >
-             <p className="centerText"><b>View Full Information</b></p></Button>
-  
-        </Card>    
-    </div>
-  })}
+<Carousel
+responsive={responsive}
+>
+{markup}
+</Carousel>
       </>
     )
   }
