@@ -35,13 +35,11 @@ const Movies = () => {
       {error && <div><h1>{error}</h1></div>}
       { isPending && <div><h2>Data is Loading...</h2></div>}
       {movies && 
-      // <div>Hello World</div>
       <>{movies.data.results.map((movie) => {
-    return <ul>
-      <li key={movie.id}>
+    return <div key={movie.id}>
     {movie.title}
-      </li>
-    </ul>
+    <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title}/>
+    </div>
   })}</>
   }
     </>
