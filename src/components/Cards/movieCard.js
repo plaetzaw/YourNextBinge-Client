@@ -61,8 +61,7 @@ const MovieCard = ({ movies }) => {
       return (
       <>
 <Carousel
-responsive={responsive}
->
+responsive={responsive}>
 {markup}
 </Carousel>
       </>
