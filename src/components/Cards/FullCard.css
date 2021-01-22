@@ -1,0 +1,10 @@
+.card {
+  text-align: center;
+  padding: 10px;
+  /* background-color: green; */
+}
+
+.card-item {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}

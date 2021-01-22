@@ -1,8 +1,6 @@
 import React from 'react'
 import useFetch from '../useFetch'
-import MovieList from '../MovieList'
 import MovieCard from '../../components/Cards/movieCard'
-import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 const Movies = () => {
