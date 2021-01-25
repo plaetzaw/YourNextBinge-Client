@@ -8,6 +8,51 @@ const FullTVShowCard = ({props}) => {
   const credits = props.data.credits;
   const recs = props.data.recs;
 
+  const castRender = credits.cast.map((cast) => {
+    const phChecker = cast.profile_path === null ?   (Placeholder) : (`https://image.tmdb.org/t/p/original/${cast.profile_path}`)
+    return <Card
+    key={cast.id}
+    onClick={() => {
+      const idObj = {
+        id: cast.id
+      } 
+      console.log(idObj)
+    }}
+    >
+      <img
+      src={phChecker}
+      height="300px"
+      alt={cast.name}
+      // width="300px"
+      />
+      <li className="centerText"><i>{cast.name}</i> as <br/>
+      <b>{cast.character}</b></li>
+    </Card>
+  })
+
+  const recRender = recs.results.map((recs) => {
+    const ppChecker = recs.poster_path === null ? (Placeholder) : (`https://image.tmdb.org/t/p/original/${recs.poster_path}`)
+    return <Card 
+    key={recs.id}
+    onClick={() => {
+      const idObj = {
+        id: recs.id
+      } 
+      console.log(idObj)
+    }}
+    >
+      <img
+      alt={recs.title}
+      src={ppChecker}
+      height="400px"
+       />
+      <br/>
+      <div> 
+      <Paper><b>{recs.title}</b></Paper></div>
+  
+    </Card>
+  })
+
   const genres = [] 
   info.genres.forEach((item) => {
  genres.push(item.name + ",")
@@ -22,11 +67,11 @@ const nextEpChecker = info.next_episode_to_air.air_date === null ? (<>Next Episo
 const productionChecker = info.in_production === true ? (<>Series in Production</>) : (<>Series no longer in Production</>)
 
   console.log(info, credits, recs)
-  console.log(info.next_episode_to_air.air_date)
   return (
     <>
     <Card className="card">
       <h1>{info.name}</h1>
+      {tagChecker}
       {genres}
       <CardMedia
       className="card-poster"
@@ -55,6 +100,21 @@ const productionChecker = info.in_production === true ? (<>Series in Production<
       {homeChecker}
       </Paper>
       </div>
+
+      <h1>Cast</h1>
+      <div
+      className="p-grid"
+      >
+        {castRender}
+      </div>
+
+      <h1>Recommendations based on {info.title}</h1>
+      <div
+      className="p-grid"
+      >
+      {recRender}
+      </div>
+
     </Card>
   
     </>
