@@ -1,4 +1,5 @@
 import { Card, CardMedia, Paper } from '@material-ui/core'
+import { Link } from 'react-router-dom'
 import Placeholder from '../../utility/200x340.png'
 import './FullCard.css'
 import 'primeflex/primeflex.css';
@@ -12,17 +13,30 @@ const Test = ({props}) => {
 
     console.log(info, credits, providers, recs)
 
+    // const toPerson = () => {
+    //   console.log("I have been clicked")
+    //   const idObj = {
+    //     id: info.id
+    //   }
+    //   console.log(idObj)
+    //   axios.post('http://localhost:8080/personInfo/', idObj).then(() => {
+    //     history.push(`person/${info.id}`)
+    //   })
+    // }
+
+
     const genres = [] 
- info.genres.forEach((item) => {
-genres.push(item.name + ",")
-  })
+    info.genres.forEach((item) => {
+    genres.push(item.name + ",")
+    })
 
-  let tagChecker = info.tagline === "" ?  (<></>) : (<i><h3>"{info.tagline}"</h3></i>)
-  let homeChecker = info.homepage === "" ? (<><b>No Homepage Reported</b></>) : (<a href={`${info.homepage}`}>{info.title} Homepage</a>)
+    const tagChecker = info.tagline === "" ?  (<></>) : (<i><h3>"{info.tagline}"</h3></i>)
+    const homeChecker = info.homepage === "" ? (<><b>No Homepage Reported</b></>) : (<a href={`${info.homepage}`}>{info.title} Homepage</a>)
 
-  let castRender = credits.cast.map((cast) => {
-    let phChecker = cast.profile_path === null ?   (Placeholder) : (`https://image.tmdb.org/t/p/original/${cast.profile_path}`)
-    return <Card>
+    const castRender = credits.cast.map((cast) => {
+    const phChecker = cast.profile_path === null ?   (Placeholder) : (`https://image.tmdb.org/t/p/original/${cast.profile_path}`)
+    return <Link to={`/person/${cast.id}`}><Card
+    key={cast.id}>
       <img
       src={phChecker}
       height="300px"
@@ -31,20 +45,23 @@ genres.push(item.name + ",")
       <li><i>{cast.name}</i> as <br/>
       <b>{cast.character}</b></li>
     </Card>
+    </Link>
   })
 
-  let recRender = recs.results.map((recs) => {
-    let ppChecker = recs.poster_path === null ? (Placeholder) : (`https://image.tmdb.org/t/p/original/${recs.poster_path}`)
-    return <Card>
+  const recRender = recs.results.map((recs) => {
+    const ppChecker = recs.poster_path === null ? (Placeholder) : (`https://image.tmdb.org/t/p/original/${recs.poster_path}`)
+    return <Link to={`/movie/${recs.id}`}><Card
+    key={recs.id}
+    >
       <img
       alt={recs.title}
       src={ppChecker}
       height="400px"
        />
       <br/>
-      <p> <Paper><b>{recs.title}</b></Paper></p>
-  
+      <span><Paper><b>{recs.title}</b></Paper></span> 
     </Card>
+    </Link>
   })
   
  

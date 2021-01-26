@@ -17,7 +17,7 @@ const FullPersonCard = ({props}) => {
       src={phChecker}
       height="400"
       />
-      <li className="centerText"><i>in {credits.title}</i> as <br/>
+      <li><i>in {credits.title}</i> as <br/>
       <b>{credits.character}</b></li>
       <br/>
       <i>Released: {credits.release_date}</i>
@@ -35,9 +35,9 @@ const FullPersonCard = ({props}) => {
         src={`https://image.tmdb.org/t/p/original/${info.profile_path}`}
         />
         <br/>
-        <div className="centerText"> <h3>{info.biography}</h3></div>
+        <div> <h3>{info.biography}</h3></div>
 
-        <h1 className="centerText">Credits for {info.name}</h1>
+        <h1>Credits for {info.name}</h1>
         <div className="p-grid">
             {creditsRender}
             </div>    

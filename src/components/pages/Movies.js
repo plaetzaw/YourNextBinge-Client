@@ -2,6 +2,9 @@ import React from 'react'
 import useFetch from '../useFetch'
 import MovieCard from '../../components/Cards/movieCard'
 import "react-multi-carousel/lib/styles.css";
+import LinearProgress from '@material-ui/core/LinearProgress';
+import './pages.css'
+
 
 const Movies = () => {
 
@@ -15,7 +18,7 @@ const Movies = () => {
     <>
       <h1>Movies</h1>
       {error && <div><h1>{error}</h1></div>}
-      { isPending && <div><h2>Data is Loading...</h2></div>}
+      { isPending && <div className="loading"><h1><LinearProgress/>Loading...</h1></div>}
       {movies && <MovieCard movies={movies} />}
     </>
   )

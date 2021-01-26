@@ -7,6 +7,8 @@ import "react-multi-carousel/lib/styles.css";
 import { Link } from 'react-router-dom';
 
 
+
+
 const MovieCard = ({ movies }) => {
     const responsive = {
         desktop: {
@@ -25,16 +27,6 @@ const MovieCard = ({ movies }) => {
           slidesToSlide: 1 // optional, default to 1.
         }
       };
-    // const dispatch = useDispatch();
-  
-    //  function handleMovie (){
-    //    console.log("I have been clicked ID:" + id)
-    //    let idObj = {
-    //      id: id
-    //    }
-    //     dispatch(GetMovieInfo(idObj));
-    //   }
-
 
     let markup = movies.data.results.map((movie) => {
         return <div key={movie.id}>

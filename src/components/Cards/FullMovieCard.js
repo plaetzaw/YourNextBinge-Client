@@ -5,6 +5,8 @@ import {
   useParams} from 'react-router-dom'
 import useFetch from '../useFetchID';
 import CardTest from './CardTest'
+import LinearProgress from '@material-ui/core/LinearProgress';
+import './FullCard.css'
 
 const FullMovieCard = () => {
     const { id } = useParams();
@@ -16,7 +18,7 @@ const FullMovieCard = () => {
   return (
     <>
        {error && <div><h1>{error}</h1></div>}
-      { isPending && <div><h2>Data is Loading...</h2></div>}
+       { isPending && <div className="loading"><h1><LinearProgress/>Loading...</h1></div>}
       {movie &&  <><CardTest props={movie}/></>}
     </>
   )
