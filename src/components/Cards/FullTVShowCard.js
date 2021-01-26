@@ -64,7 +64,7 @@ const tagChecker = info.tagline === "" ?  (<></>) : (<i><h3>"{info.tagline}"</h3
 
 const homeChecker = info.homepage === "" ? (<><b>No Homepage Reported</b></>) : (<a href={`${info.homepage}`}>{info.name} Homepage</a>)
 
-const nextEpChecker = info.next_episode_to_air.air_date === null ? (<>Next Episode Airing: Not Set</>) : (<>Next Episode Airing: {info.next_episode_to_air.air_date}</>)
+const nextEpChecker = info.next_episode_to_air === null ? (<>Next Episode Airing: Not Set</>) : (<>Next Episode Airing: {info.next_episode_to_air.air_date}</>)
 
 const productionChecker = info.in_production === true ? (<>Series in Production</>) : (<>Series no longer in Production</>)
 
