@@ -1,4 +1,5 @@
 import { Card, CardMedia, Paper } from '@material-ui/core'
+import {Link} from 'react-router-dom'
 import Placeholder from '../../utility/200x340.png'
 import './FullCard.css'
 import 'primeflex/primeflex.css';
@@ -10,7 +11,7 @@ const FullTVShowCard = ({props}) => {
 
   const castRender = credits.cast.map((cast) => {
     const phChecker = cast.profile_path === null ?   (Placeholder) : (`https://image.tmdb.org/t/p/original/${cast.profile_path}`)
-    return <Card
+    return <Link to ={`/tvshow/${cast.id}`}><Card
     key={cast.id}
     onClick={() => {
       const idObj = {
@@ -28,6 +29,7 @@ const FullTVShowCard = ({props}) => {
       <li className="centerText"><i>{cast.name}</i> as <br/>
       <b>{cast.character}</b></li>
     </Card>
+    </Link>
   })
 
   const recRender = recs.results.map((recs) => {
