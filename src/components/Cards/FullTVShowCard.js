@@ -11,7 +11,7 @@ const FullTVShowCard = ({props}) => {
 
   const castRender = credits.cast.map((cast) => {
     const phChecker = cast.profile_path === null ?   (Placeholder) : (`https://image.tmdb.org/t/p/original/${cast.profile_path}`)
-    return <Link to ={`/tvshow/${cast.id}`}><Card
+    return <Link to ={`/person/${cast.id}`}><Card
     key={cast.id}
     onClick={() => {
       const idObj = {
@@ -34,7 +34,7 @@ const FullTVShowCard = ({props}) => {
 
   const recRender = recs.results.map((recs) => {
     const ppChecker = recs.poster_path === null ? (Placeholder) : (`https://image.tmdb.org/t/p/original/${recs.poster_path}`)
-    return <Card 
+    return <Link to={`/tvshow/${recs.id}`}><Card 
     key={recs.id}
     onClick={() => {
       const idObj = {
@@ -51,8 +51,8 @@ const FullTVShowCard = ({props}) => {
       <br/>
       <div> 
       <Paper><b>{recs.title}</b></Paper></div>
-  
     </Card>
+    </Link>
   })
 
   const genres = [] 
