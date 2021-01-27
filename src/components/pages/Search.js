@@ -7,22 +7,17 @@ import TextField from '@material-ui/core/TextField';
 import axios from 'axios'
 import './pages.css'
 import MovieCard from '../Cards/MiniMovieCard'
-import TVCard from '../Cards/FullTVShowCard';
-import PersonCard from '../Cards/FullPersonCard'
-
-
-
+import TVCard from '../Cards/MiniShowCard';
+import PersonCard from '../Cards/MiniPersonCard'
 
 const Search = () => {
-    const [serachCategory, setSearchCategory] = useState("movie")
+    const [searchCategory, setSearchCategory] = useState("movie")
     const [searchTerm, setSearchTerm] = useState("")
     let [results, setResults] = useState()
     const [loading, setLoading] = useState(false)
     const [movies, setMovies] = useState(false);
     const [tvshows, setTVShows] = useState(false);
     const [people, setPeople] = useState(false);
-
-
 
     const handleCategory = (e) => {
         setSearchCategory(e.target.value)
@@ -34,7 +29,7 @@ const Search = () => {
     const onSubmit = () => {
         setLoading(true)
         let searchObj = {
-            category: serachCategory,
+            category: searchCategory,
             term: searchTerm,
         }
         console.log(searchObj)
@@ -42,17 +37,27 @@ const Search = () => {
         .then((res) => {
             setLoading(false);
             setResults(res);
-            console.log(movies, tvshows, people)    
-            switch (searchTerm){
-                case (searchTerm === 'movie'):
+            console.log(searchCategory)
+            console.log(movies, tvshows, people)
+            if (searchCategory === 'movie'){
                 setMovies(true)
-                break;
-                case (searchTerm === 'tv'):
+            }    
+            else if (searchCategory === 'tv'){
                 setTVShows(true)
-                break;
-                case (searchTerm === 'person'):
+            }
+            else if (searchCategory === 'person'){
                 setPeople(true)
             }
+            // switch (searchTerm){
+            //     case (searchTerm === 'movie'):
+            //     setMovies(true)
+            //     break;
+            //     case (searchTerm === 'tv'):
+            //     setTVShows(true)
+            //     break;
+            //     case (searchTerm === 'person'):
+            //     setPeople(true)
+            // }
         console.log(movies, tvshows, people)    
         })
         console.log(results)
@@ -70,7 +75,7 @@ const Search = () => {
       <FormControl>
         <span>Media Type</span>
         <Select
-          value={serachCategory}
+          value={searchCategory}
           onChange={handleCategory}
         >
           <MenuItem value={"movie"}>Movies</MenuItem>
