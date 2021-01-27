@@ -6,7 +6,9 @@ import Select from '@material-ui/core/Select';
 import TextField from '@material-ui/core/TextField';
 import axios from 'axios'
 import './pages.css'
-import SearchCard from '../Cards/MiniMovieCard'
+import MovieCard from '../Cards/MiniMovieCard'
+import TVCard from '../Cards/FullTVShowCard';
+import PersonCard from '../Cards/FullPersonCard'
 
 
 
@@ -40,6 +42,7 @@ const Search = () => {
         .then((res) => {
             setLoading(false);
             setResults(res);
+            console.log(movies, tvshows, people)    
             switch (searchTerm){
                 case (searchTerm === 'movie'):
                 setMovies(true)
@@ -50,6 +53,7 @@ const Search = () => {
                 case (searchTerm === 'person'):
                 setPeople(true)
             }
+        console.log(movies, tvshows, people)    
         })
         console.log(results)
 
@@ -83,7 +87,11 @@ const Search = () => {
       <br/>
       <h1>Search Results</h1>
       {loading && <h1>Loading Search Results</h1>}
-      {results && <SearchCard movies={results}/>}
+      {/* {results && <SearchCard movies={results}/>} */}
+      {movies && <MovieCard movies={results}/>}
+      {tvshows && <TVCard tvshows={results}/>}
+      {people && <PersonCard people={results}/>}
+
     </>
   )
 }
