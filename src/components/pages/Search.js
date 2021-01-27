@@ -13,9 +13,13 @@ import SearchCard from '../Cards/MiniMovieCard'
 
 const Search = () => {
     const [serachCategory, setSearchCategory] = useState("movie")
-    const [serachTerm, setSearchTerm] = useState("")
+    const [searchTerm, setSearchTerm] = useState("")
     let [results, setResults] = useState()
-    const [pending, setPending] = useState(true)
+    const [loading, setLoading] = useState(false)
+    const [movies, setMovies] = useState(false);
+    const [tvshows, setTVShows] = useState(false);
+    const [people, setPeople] = useState(false);
+
 
 
     const handleCategory = (e) => {
@@ -26,17 +30,26 @@ const Search = () => {
     }
 
     const onSubmit = () => {
-        setPending(true)
+        setLoading(true)
         let searchObj = {
             category: serachCategory,
-            term: serachTerm,
+            term: searchTerm,
         }
         console.log(searchObj)
         axios.post("http://localhost:8080/search", searchObj)
         .then((res) => {
-            setPending(false);
-            setResults(res)
-            // setResults(res.data.results)
+            setLoading(false);
+            setResults(res);
+            switch (searchTerm){
+                case (searchTerm === 'movie'):
+                setMovies(true)
+                break;
+                case (searchTerm === 'tv'):
+                setTVShows(true)
+                break;
+                case (searchTerm === 'person'):
+                setPeople(true)
+            }
         })
         console.log(results)
 
@@ -45,7 +58,6 @@ const Search = () => {
 
         console.log(results)
        let markup = <>Hello Whirl</>
-
 
   return (
     <>
@@ -63,13 +75,14 @@ const Search = () => {
         </Select>
         <span>Search Term</span>
         <TextField label="Search Term" variant="outlined" 
-        value={serachTerm} onChange={handleSearch}/>
+        value={searchTerm} onChange={handleSearch}/>
         <br/>
         <div className="btn" onClick={onSubmit}>Search</div>
       </FormControl>
       </Card>
       <br/>
       <h1>Search Results</h1>
+      {loading && <h1>Loading Search Results</h1>}
       {results && <SearchCard movies={results}/>}
     </>
   )

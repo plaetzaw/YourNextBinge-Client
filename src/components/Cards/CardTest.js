@@ -102,7 +102,7 @@ const Test = ({props}) => {
       </div>
 
       <div className="p-grid">
-      {/* {recRender} */}
+      {recRender}
       </div>
 
     </Card>
