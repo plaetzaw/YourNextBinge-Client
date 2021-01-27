@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 
 
 const MovieCard = ({ movies }) => {
+
     const responsive = {
         desktop: {
           breakpoint: { max: 3000, min: 1024 },

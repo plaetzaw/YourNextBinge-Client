@@ -1,4 +1,4 @@
-import { Card, CardMedia, Paper } from '@material-ui/core'
+import { Card, CardMedia } from '@material-ui/core'
 import {Link} from 'react-router-dom'
 import Placeholder from '../../utility/200x340.png'
 import './FullCard.css'
@@ -49,8 +49,8 @@ const FullPersonCard = ({props}) => {
 
   return (
     <>
-    <Card>
-      {info.name}
+    <Card className="card">
+      <h1>{info.name}</h1>
       <CardMedia
         className="poster"
         component="img"

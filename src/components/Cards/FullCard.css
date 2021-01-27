@@ -13,3 +13,7 @@
   margin-top: 50px;
   margin-bottom: 50px;
 }
+
+.card h1 {
+  text-align: center;
+}
