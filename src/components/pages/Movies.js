@@ -6,8 +6,6 @@ import "react-multi-carousel/lib/styles.css";
 import LinearProgress from '@material-ui/core/LinearProgress';
 import './pages.css'
 
-
-
 const Movies = () => {
   const [page, setPage] = useState(1)
 
@@ -15,16 +13,11 @@ const Movies = () => {
     page: page
   }
 
-
   const {data: movies, isPending, error} = useFetchUpdate('http://localhost:8080/popularMovies', pageObj);
   
   const LoadMoreMovies = () => {
     setPage(page => page + 1)
   }
-
-
-
-  console.log(movies)
   return (
     <>
       <h1>Movies</h1>

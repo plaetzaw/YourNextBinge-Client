@@ -5,8 +5,8 @@ import "./Button.css"
 const Button = () => {
   return (
     <>
-      <Link to='register'>
-        <button className="btn">Sign-Up</button>
+      <Link to='search'>
+        <button className="btn">Search</button>
       </Link>
     </>
   )

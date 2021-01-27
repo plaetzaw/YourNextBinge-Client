@@ -7,6 +7,7 @@ import People from './components/pages/People'
 import FullMovieCard from './components/Cards/FullMovieCard';
 import FullTVShowPage from './components/pages/FullTVShowPage';
 import FullPersonPage from './components/pages/FullPersonPage';
+import Search from './components/pages/Search';
 import NotFound from './components/pages/404';
 
 import './index.css'
@@ -24,7 +25,8 @@ function App() {
           <Route path="/tvshow/:id" component={FullTVShowPage}/>
           <Route path="/people" component={People}/>
           <Route path="/person/:id" component={FullPersonPage}/>
-          <Route path="*" component={NotFound} />
+          <Route path="/search" component={Search}/>
+          <Route path="*" component={NotFound}/>
       </Switch>
     </Router>
   );

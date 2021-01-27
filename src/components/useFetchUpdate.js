@@ -11,13 +11,6 @@ const useFetch = (url, page) => {
 
     setTimeout(() => {
       axios.post(url, page, { signal: abortCont.signal })
-      // .then(res => {
-      //   console.log(res)
-      //   if (!res.ok) { // error coming back from server
-      //     throw Error('could not fetch the data for that resource');
-      //   } 
-      //   return res.json();
-      // })
       .then(data => {
         setIsPending(false);
         setData(data);

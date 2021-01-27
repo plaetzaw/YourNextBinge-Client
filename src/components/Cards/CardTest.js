@@ -35,14 +35,13 @@ const Test = ({props}) => {
 
     const castRender = credits.cast.map((cast) => {
     const phChecker = cast.profile_path === null ?   (Placeholder) : (`https://image.tmdb.org/t/p/original/${cast.profile_path}`)
-    return <Link to={`/person/${cast.id}`}><Card
-    key={cast.id}>
+    return <Link to={`/person/${cast.id}`}><Card>
       <img
       src={phChecker}
       height="300px"
       alt={cast.name}
       />
-      <li><i>{cast.name}</i> as <br/>
+      <li key={cast.id}><i>{cast.name}</i> as <br/>
       <b>{cast.character}</b></li>
     </Card>
     </Link>
@@ -103,7 +102,7 @@ const Test = ({props}) => {
       </div>
 
       <div className="p-grid">
-      {recRender}
+      {/* {recRender} */}
       </div>
 
     </Card>
