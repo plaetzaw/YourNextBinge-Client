@@ -30,9 +30,7 @@ const MovieCard = ({ movies }) => {
       };
 
     let markup = movies.data.results.map((movie) => {
-        return <div key={movie.id} 
-              // className="container"
-              >
+        return <div key={movie.id}>
               <Card         
               className="minicard">
               {movie.title}

@@ -27,12 +27,12 @@ const MiniShowCard = ({ tvshows }) => {
 
       let showmarkup = tvshows.data.results.map((tvshow) => {
         return <div key={tvshow.id}>
-                {tvshow.title}
         <Card
-            className="miniCard">
+            className="minicard">
+            {tvshow.name}
               <CardMedia
               component="img"
-              alt={tvshow.title}
+              alt={tvshow.name}
               src={`https://image.tmdb.org/t/p/original/${tvshow.poster_path}`}
               />  
                 <Link to={`/tvshow/${tvshow.id}`}>

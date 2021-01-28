@@ -27,21 +27,17 @@ const MiniPersonCard = ({ people }) => {
 
       let personmarkup = people.data.results.map((person) => {
         return <div key={person.id}>
-                {person.name}
-        <Card
-            className="miniCard"
-            >
+            <Card
+            className="minicard">
+              {person.name}
               <CardMedia
-              className="posterMini"
               component="img"
               alt={person.title}
               src={`https://image.tmdb.org/t/p/original/${person.profile_path}`}
               />  
                 <Link to={`/person/${person.id}`}>
-                <Button 
-                // onClick={handleperson}
-                >
-                 <p className="centerText"><b>View Full Information</b></p></Button>
+                <Button>
+                 <p className="minicard-btn"><b>View Full Information</b></p></Button>
                  </Link>
             </Card>    
         </div>
@@ -50,7 +46,10 @@ const MiniPersonCard = ({ people }) => {
   return (
     <>
  <Carousel
-responsive={responsive}>
+responsive={responsive}
+showDots={true}
+focusOnSelect={true}
+>
 {personmarkup}
 </Carousel>     
     </>

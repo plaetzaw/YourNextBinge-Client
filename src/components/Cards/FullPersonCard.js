@@ -15,6 +15,7 @@ const FullPersonCard = ({props}) => {
     const phChecker = credits.poster_path === null ?   (Placeholder) : (`https://image.tmdb.org/t/p/original/${credits.poster_path}`)
     return <Link to={`/movie/${credits.id}`}><Card
     key={credits.id}
+    className="cast-card"
     >
       <img
       alt={credits.name}
@@ -33,6 +34,7 @@ const FullPersonCard = ({props}) => {
     const phChecker = credits.poster_path === null ?   (Placeholder) : (`https://image.tmdb.org/t/p/original/${credits.poster_path}`)
     return <Link to={`/tvshow/${credits.id}`}><Card
     key={credits.id}
+    className="cast-card"
     >
       <img
       alt={credits.name}
@@ -48,7 +50,7 @@ const FullPersonCard = ({props}) => {
   })
 
   return (
-    <>
+    <div className="cardBackground">
     <Card className="card">
       <h1>{info.name}</h1>
       <CardMedia
@@ -58,19 +60,24 @@ const FullPersonCard = ({props}) => {
         src={`https://image.tmdb.org/t/p/original/${info.profile_path}`}
         />
         <br/>
-        <div> <h3>{info.biography}</h3></div>
+    <div> <h3>{info.biography}</h3></div>
+    <br/>
 
-        <h1>Movie Credits for {info.name}</h1>
-        <div className="p-grid">
-            {moviecreditRender}
-            </div>   
+    <h1>Movie Credits for {info.name}</h1>
+    <div className="item-display">
+    <div className="p-grid">
+    {moviecreditRender}
+    </div>   
+    </div>
 
-             <h1>TV Credits for {info.name}</h1>
-        <div className="p-grid">
-            {tvcreditRender}
-            </div>  
+    <h1>TV Credits for {info.name}</h1>
+    <div className="item-display">
+    <div className="p-grid">
+    {tvcreditRender}
+    </div>  
+    </div>
     </Card>
-    </>
+    </div>
   )
 }
 
