@@ -44,7 +44,7 @@ const People = () => {
   const LoadMorePeople = () => {
     setIsPending(true)
     setPage(page => page + 1)
-    axios.post('http://localhost:8080/popularShows', pageObj)
+    axios.post('http://localhost:8080/popularPeople', pageObj)
     .then((res) => {
       setIsPending(false);
       setData(res)
@@ -57,7 +57,7 @@ const People = () => {
     <h1 className="display">People</h1>
     <div className="load-btn-row"><button className="load-btn" onClick={LoadMorePeople}>Load More People</button></div>        
     {error && <div><h1>{error}</h1></div>}
-    { isPending && <div className="loading"><h1><LinearProgress/>Loading...</h1></div>}
+    {isPending && <div className="loading"><h1><LinearProgress/>Loading...</h1></div>}
     {data && <PersonCard people={data} />}
   </div>
   )

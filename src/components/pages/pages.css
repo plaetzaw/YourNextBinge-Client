@@ -80,7 +80,7 @@
   align-self: center;
   padding: 8px 20px;
   border-radius: 4px;
-  background-color: grey;
+  background-color: #1888ff;
   /* background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%); */
   color: white;
 }
