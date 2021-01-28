@@ -48,6 +48,11 @@ const Navbar = () => {
                 </Link>
                 {dropdown && <Dropdown/>}
             </li> */}
+        <li className={'nav-item'}>
+                <Link to="/" className='nav-links' onClick={closeMobileMenu}>
+                    Home
+                </Link>
+            </li>
             <li className={'nav-item'}>
                 <Link to="/movies" className='nav-links' onClick={closeMobileMenu}>
                     Movies

@@ -1,5 +1,10 @@
 export const MenuItems = [
     {
+        title: 'Home',
+        path: '/',
+        cName: 'dropdown-link'
+    },
+    {
         title: 'Movies',
         path: '/movies',
         cName: 'dropdown-link'
