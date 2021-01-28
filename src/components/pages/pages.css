@@ -61,12 +61,28 @@
   background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
 }
 
+.load-btn-row {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  align-self: center;
+  background-color: linear-gradient(
+    90deg,
+    rgb(28, 27, 27) 0%,
+    rgb(26, 23, 23) 100%
+  );
+}
+
 .load-btn {
   display: grid;
   place-items: center;
   text-align: center;
+  align-self: center;
   padding: 8px 20px;
   border-radius: 4px;
+  background-color: grey;
+  /* background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%); */
+  color: white;
 }
 
 .minicard {

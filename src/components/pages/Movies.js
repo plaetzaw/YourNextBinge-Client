@@ -61,7 +61,7 @@ const Movies = () => {
   return (
     <div className="container">
       <h1 className="display">Movies</h1>      
-      <div className="load-btn"><button onClick={LoadMoreMovies}>Load More Movies</button></div>
+      <div className="load-btn-row"><button className="load-btn" onClick={LoadMoreMovies}>Load More Movies</button></div>
       {error && <div><h1>{error}</h1></div>}
       { isPending && <div className="loading"><h1><LinearProgress/>Loading...</h1></div>}
       {data && <MovieCard movies={data} />}

@@ -23,3 +23,13 @@
 .card h1 {
   text-align: center;
 }
+
+.cast-card {
+  margin: 5px;
+  /* padding: 5px; */
+}
+
+.item-display {
+  display: grid;
+  place-items: center;
+}

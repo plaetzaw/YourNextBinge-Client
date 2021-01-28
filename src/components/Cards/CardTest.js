@@ -35,7 +35,9 @@ const Test = ({props}) => {
 
     const castRender = credits.cast.map((cast) => {
     const phChecker = cast.profile_path === null ?   (Placeholder) : (`https://image.tmdb.org/t/p/original/${cast.profile_path}`)
-    return <Link to={`/person/${cast.id}`}><Card>
+    return <Link to={`/person/${cast.id}`}><Card
+    key={cast.id}
+    className="cast-card">
       <img
       src={phChecker}
       height="300px"
@@ -50,6 +52,7 @@ const Test = ({props}) => {
   const recRender = recs.results.map((recs) => {
     const ppChecker = recs.poster_path === null ? (Placeholder) : (`https://image.tmdb.org/t/p/original/${recs.poster_path}`)
     return <Link to={`/movie/${recs.id}`}><Card
+    className="cast-card"
     key={recs.id}
     >
       <img
@@ -110,15 +113,21 @@ const Test = ({props}) => {
       </Paper>
       </div>
       <br/>
-      <h1>Cast</h1>
+      <h1>Cast of {info.title}</h1>
 
+      <div className="item-display">
       <div className="p-grid">
       {castRender}
       </div>
+      </div>
 
+      <h1>Recommendations based on {info.title}</h1>
+      <div className="item-display">
       <div className="p-grid">
       {recRender}
       </div>
+      </div>
+
 
     </Card>
     </div>

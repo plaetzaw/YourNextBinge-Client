@@ -55,7 +55,7 @@ const MovieCard = ({ movies }) => {
 <Carousel
 responsive={responsive}
 showDots={true}
-infinite={true}
+// infinite={true}
 focusOnSelect={true}
 >
 {markup}
