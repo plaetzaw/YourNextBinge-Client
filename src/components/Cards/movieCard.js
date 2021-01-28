@@ -30,22 +30,21 @@ const MovieCard = ({ movies }) => {
       };
 
     let markup = movies.data.results.map((movie) => {
-        return <div key={movie.id}>
-                {movie.title}
-        <Card
-            className="miniCard"
-            >
+        return <div key={movie.id} 
+              // className="container"
+              >
+              <Card         
+              className="minicard">
+              {movie.title}
               <CardMedia
-              className="posterMini"
               component="img"
               alt={movie.title}
               src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
               />  
                 <Link to={`/movie/${movie.id}`}>
-                <Button 
-                // onClick={handleMovie}
-                >
-                 <p className="centerText"><b>View Full Information</b></p></Button>
+                <Button>
+              <p className="minicard-btn"><b>See Movie Information</b></p>
+                </Button>
                  </Link>
             </Card>    
         </div>
@@ -54,7 +53,11 @@ const MovieCard = ({ movies }) => {
       return (
       <>
 <Carousel
-responsive={responsive}>
+responsive={responsive}
+showDots={true}
+infinite={true}
+focusOnSelect={true}
+>
 {markup}
 </Carousel>
       </>

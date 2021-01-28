@@ -80,7 +80,7 @@ const Test = ({props}) => {
   
  
   return (
-    <>
+    <div className="cardBackground">
     <Card className="card">
         <h1>{info.title}</h1>
         {tagChecker}
@@ -121,7 +121,7 @@ const Test = ({props}) => {
       </div>
 
     </Card>
-    </>
+    </div>
   )
 }
 

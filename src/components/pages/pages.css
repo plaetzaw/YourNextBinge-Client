@@ -48,3 +48,38 @@
   border-radius: 4px;
   border: 2px solid var(--primary);
 }
+
+.display {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: white;
+  background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+}
+
+.container {
+  background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+}
+
+.load-btn {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 8px 20px;
+  border-radius: 4px;
+}
+
+.minicard {
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.minicard-btn {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 8px 20px;
+  border-radius: 4px;
+  color: #1888ff;
+}
