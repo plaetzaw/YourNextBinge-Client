@@ -62,6 +62,21 @@ const Test = ({props}) => {
     </Card>
     </Link>
   })
+
+  let USprov = []
+
+  for (let i = 0; i < providers.results.length; i++){
+    console.log([i])
+    if ([i] === 'US'){
+      USprov.push(i)
+      
+    }
+  }
+  console.log(USprov)
+  console.log(providers.results)
+  // const providerRender = providers.results.eng.map((provider) => {
+  // return  <li key={provider.provider_id}>{provider.provider_name}</li>
+  // })
   
  
   return (

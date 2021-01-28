@@ -37,8 +37,6 @@ const Search = () => {
         .then((res) => {
             setLoading(false);
             setResults(res);
-            console.log(searchCategory)
-            console.log(movies, tvshows, people)
             if (searchCategory === 'movie'){
                 setMovies(true)
             }    
@@ -58,16 +56,8 @@ const Search = () => {
             //     case (searchTerm === 'person'):
             //     setPeople(true)
             // }
-        console.log(movies, tvshows, people)    
         })
-        console.log(results)
-
     }
-
-
-        console.log(results)
-       let markup = <>Hello Whirl</>
-
   return (
     <>
     <Card className="search">
