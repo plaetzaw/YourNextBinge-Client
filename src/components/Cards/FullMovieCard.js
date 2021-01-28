@@ -17,7 +17,7 @@ const FullMovieCard = () => {
   return (
     <>
        {error && <div><h1>{error}</h1></div>}
-       { isPending && <div className="loading"><h1><LinearProgress/>Loading...</h1></div>}
+       { isPending && <div className="loading"><h1><LinearProgress/>Loading Movie Information...</h1></div>}
       {movie &&  <><CardTest props={movie}/></>}
     </>
   )

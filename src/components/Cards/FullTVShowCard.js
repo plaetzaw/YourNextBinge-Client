@@ -1,5 +1,5 @@
 import { Card, CardMedia, Paper } from '@material-ui/core'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Placeholder from '../../utility/200x340.png'
 import './FullCard.css'
 import 'primeflex/primeflex.css';
@@ -13,6 +13,7 @@ const FullTVShowCard = ({props}) => {
     const phChecker = cast.profile_path === null ?   (Placeholder) : (`https://image.tmdb.org/t/p/original/${cast.profile_path}`)
     return <Link to ={`/person/${cast.id}`}><Card
     key={cast.id}
+    className="cast-card"
     onClick={() => {
       const idObj = {
         id: cast.id
@@ -36,6 +37,7 @@ const FullTVShowCard = ({props}) => {
     const ppChecker = recs.poster_path === null ? (Placeholder) : (`https://image.tmdb.org/t/p/original/${recs.poster_path}`)
     return <Link to={`/tvshow/${recs.id}`}><Card 
     key={recs.id}
+    className="cast-card"
     onClick={() => {
       const idObj = {
         id: recs.id
@@ -44,13 +46,13 @@ const FullTVShowCard = ({props}) => {
     }}
     >
       <img
-      alt={recs.title}
+      alt={recs.name}
       src={ppChecker}
       height="400px"
        />
       <br/>
       <div> 
-      <Paper><b>{recs.title}</b></Paper></div>
+      <Paper><b>{recs.name}</b></Paper></div>
     </Card>
     </Link>
   })
@@ -70,7 +72,7 @@ const productionChecker = info.in_production === true ? (<>Series in Production<
 
   console.log(info, credits, recs)
   return (
-    <>
+    <div className="cardBackground">
     <Card className="card">
       <h1>{info.name}</h1>
       {tagChecker}
@@ -82,6 +84,9 @@ const productionChecker = info.in_production === true ? (<>Series in Production<
       src={`https://image.tmdb.org/t/p/original/${info.poster_path}`}
       />
       {info.overview}
+      <br/>
+      <br/>
+      <br/>
       <div className="p-grid">
       <Paper className="p-col-4">
       First Episdoe Aired: {info.first_air_date}
@@ -102,24 +107,23 @@ const productionChecker = info.in_production === true ? (<>Series in Production<
       {homeChecker}
       </Paper>
       </div>
-
-      <h1>Cast</h1>
-      <div
-      className="p-grid"
-      >
+      <br/>
+      <h1>Cast of {info.name}</h1>
+      <div className="item-display">
+      <div className="p-grid">
         {castRender}
       </div>
-
-      <h1>Recommendations based on {info.title}</h1>
-      <div
-      className="p-grid"
-      >
+      </div>
+      <br/>
+      <h1>Recommendations based on {info.name}</h1>
+      <div className="item-display">
+      <div className="p-grid">
       {recRender}
+      </div>
       </div>
 
     </Card>
-  
-    </>
+    </div>
   )
 }
 

@@ -29,19 +29,16 @@ const MiniShowCard = ({ tvshows }) => {
         return <div key={tvshow.id}>
                 {tvshow.title}
         <Card
-            className="miniCard"
-            >
+            className="miniCard">
               <CardMedia
-              className="posterMini"
               component="img"
               alt={tvshow.title}
               src={`https://image.tmdb.org/t/p/original/${tvshow.poster_path}`}
               />  
                 <Link to={`/tvshow/${tvshow.id}`}>
-                <Button 
-                // onClick={handleMovie}
-                >
-                 <p className="centerText"><b>View Full Information</b></p></Button>
+                <Button>
+                 <p className="minicard-btn"><b>See Show Information</b></p>
+                 </Button>
                  </Link>
             </Card>    
         </div>
@@ -50,7 +47,10 @@ const MiniShowCard = ({ tvshows }) => {
   return (
     <>
     <Carousel
-    responsive={responsive}>
+    responsive={responsive}
+    showDots={true}
+    focusOnSelect={true}
+>
     {showmarkup}
     </Carousel>
           </>

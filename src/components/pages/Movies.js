@@ -55,7 +55,6 @@ const Movies = () => {
       setIsPending(false);
       setData(res)
       console.log(res)
-
     })
   }
   return (
@@ -65,7 +64,6 @@ const Movies = () => {
       {error && <div><h1>{error}</h1></div>}
       { isPending && <div className="loading"><h1><LinearProgress/>Loading...</h1></div>}
       {data && <MovieCard movies={data} />}
-      {/* {nextMovies && <MovieCard movies={nextMovies} />} */}
     </div>
   )
   }

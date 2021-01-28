@@ -13,17 +13,6 @@ const Test = ({props}) => {
 
     console.log(info, credits, providers, recs)
 
-    // const toPerson = () => {
-    //   console.log("I have been clicked")
-    //   const idObj = {
-    //     id: info.id
-    //   }
-    //   console.log(idObj)
-    //   axios.post('http://localhost:8080/personInfo/', idObj).then(() => {
-    //     history.push(`person/${info.id}`)
-    //   })
-    // }
-
 
     const genres = [] 
     info.genres.forEach((item) => {
@@ -77,9 +66,7 @@ const Test = ({props}) => {
   }
   console.log(USprov)
   console.log(providers.results)
-  // const providerRender = providers.results.eng.map((provider) => {
-  // return  <li key={provider.provider_id}>{provider.provider_name}</li>
-  // })
+
   
  
   return (
@@ -98,6 +85,7 @@ const Test = ({props}) => {
         {info.overview}
         <br/>
         <br/>
+      
       <div className="p-grid">
       <Paper className="p-col-3">
       Reported Revenue: {info.revenue}
