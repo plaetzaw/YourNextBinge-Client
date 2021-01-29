@@ -15,3 +15,5 @@ Need to add placeholder posters for cards, instead of just the minicards.
 Need to make titles/characters flow to a second or third line instead of just making the card expand super wide.
 
 Need to add streaming placeholders still.
+
+404 Page not working on an invalid URL
