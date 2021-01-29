@@ -2,6 +2,8 @@ YourNextBinge is meant to help users find their next title to bingewatch.
 
 Powered by The Movie Database API
 
+https://yournextbinge.netlify.app/
+
 Known issues:
 
 On a full movie/tvshow page- directing to another title doesn't happen correctly, the id is put into the URL but the component doesn't re-render.
