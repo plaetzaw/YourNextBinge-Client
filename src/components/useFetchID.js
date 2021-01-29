@@ -36,6 +36,8 @@ const useFetch = (url, id) => {
 
     // abort the fetch
     return () => abortCont.abort();
+    //[adding the ID casues an infinite loop]
+    // eslint-disable-next-line  
   }, [url])
 
   return { data, isPending, error };

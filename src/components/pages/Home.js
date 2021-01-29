@@ -19,7 +19,7 @@ const Home = () => {
         </div>
         <div className="home-box">
         <p>Powered by</p>
-        <img src={TMDB}
+        <img alt="logo" src={TMDB}
         className="home-tmdb"
         />
         </div>
