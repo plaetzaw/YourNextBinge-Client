@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { Card } from '@material-ui/core'
+import { Card, LinearProgress } from '@material-ui/core'
 import FormControl from '@material-ui/core/FormControl';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
@@ -80,8 +80,7 @@ const Search = () => {
       </FormControl>
       </Card>
       <br/>
-      <h1>Search Results</h1>
-      {loading && <h1>Loading Search Results</h1>}
+      {loading && <h1><LinearProgress/>Loading Search Results</h1>}
       {/* {results && <SearchCard movies={results}/>} */}
       {movies && <MovieCard movies={results}/>}
       {tvshows && <TVCard tvshows={results}/>}
