@@ -26,7 +26,7 @@ function App() {
           <Route path="/people" component={People}/>
           <Route path="/person/:id" component={FullPersonPage}/>
           <Route path="/search" component={Search}/>
-          <Route path="*" component={NotFound}/>
+          <Route path="/*" component={NotFound}/>
       </Switch>
     </Router>
   );
