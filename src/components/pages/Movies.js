@@ -12,12 +12,12 @@ const Movies = () => {
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
   
-    // let {data: movies, isPending, error} = useFetchUpdate('http://localhost:8080/popularMovies', pageObj);
+    // let {data: movies, isPending, error} = useFetchUpdate('https://yournextbingeserver.herokuapp.com/popularMovies', pageObj);
     // reverted from the imported fetch so I could use the data and pass it into the cards
     // with dynamic updates.
 
     useEffect(() => {  
-      const url  = 'http://localhost:8080/popularMovies'
+      const url  = 'https://yournextbingeserver.herokuapp.com/popularMovies'
       console.log('starting')
       setTimeout(() => {
         console.log('posting')
@@ -50,7 +50,7 @@ const Movies = () => {
   const LoadMoreMovies = () => {
     setIsPending(true)
     setPage(page => page + 1)
-    axios.post('http://localhost:8080/popularMovies', pageObj)
+    axios.post('https://yournextbingeserver.herokuapp.com/popularMovies', pageObj)
     .then((res) => {
       setIsPending(false);
       setData(res)

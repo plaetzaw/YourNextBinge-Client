@@ -5,7 +5,7 @@ import "./Button.css"
 const Button = () => {
   return (
     <>
-      <Link to='search'>
+      <Link to='/search'>
         <button className="btn">Search</button>
       </Link>
     </>

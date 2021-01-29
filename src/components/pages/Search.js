@@ -33,7 +33,7 @@ const Search = () => {
             term: searchTerm,
         }
         console.log(searchObj)
-        axios.post("http://localhost:8080/search", searchObj)
+        axios.post("https://yournextbingeserver.herokuapp.com/search", searchObj)
         .then((res) => {
             setLoading(false);
             setResults(res);

@@ -10,7 +10,7 @@ const FullPersonPage = () => {
     const idObj = {
         id: id
     }
-    const { data: person, error, isPending } = useFetch('http://localhost:8080/personInfo/', idObj);    
+    const { data: person, error, isPending } = useFetch('https://yournextbingeserver.herokuapp.com/personInfo/', idObj);    
     console.log(person)
   return (
     <>

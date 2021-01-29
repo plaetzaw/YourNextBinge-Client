@@ -12,10 +12,10 @@ const TVShows = () => {
     const [data, setData] = useState(null);
     const [isPending, setIsPending] = useState(true);
     const [error, setError] = useState(null);
-  // const {data: tvshows, isPending, error} = useFetch('http://localhost:8080/popularShows');
+  // const {data: tvshows, isPending, error} = useFetch('https://yournextbingeserver.herokuapp.com/popularShows');
 
   useEffect(() => {  
-    const url  = 'http://localhost:8080/popularShows'
+    const url  = 'https://yournextbingeserver.herokuapp.com/popularShows'
     console.log('starting')
     setTimeout(() => {
       console.log('posting')
@@ -46,7 +46,7 @@ const TVShows = () => {
   const LoadMoreShows = () => {
     setIsPending(true)
     setPage(page => page + 1)
-    axios.post('http://localhost:8080/popularShows', pageObj)
+    axios.post('https://yournextbingeserver.herokuapp.com/popularShows', pageObj)
     .then((res) => {
       setIsPending(false);
       setData(res)

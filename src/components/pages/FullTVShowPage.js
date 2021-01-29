@@ -10,7 +10,7 @@ const FullMovieCard = () => {
     const idObj = {
         id: id
     }
-    const { data: tvshow, error, isPending } = useFetch('http://localhost:8080/fullshowInfo/', idObj);    
+    const { data: tvshow, error, isPending } = useFetch('https://yournextbingeserver.herokuapp.com/fullshowInfo/', idObj);    
     console.log(tvshow)
   return (
     <>

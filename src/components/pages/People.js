@@ -12,9 +12,9 @@ const People = () => {
     const [isPending, setIsPending] = useState(true);
     const [error, setError] = useState(null);
 
-  // const {data: people, isPending, error} = useFetch('http://localhost:8080/popularPeople');
+  // const {data: people, isPending, error} = useFetch('https://yournextbingeserver.herokuapp.com/popularPeople');
   useEffect(() => {  
-    const url  = 'http://localhost:8080/popularPeople'
+    const url  = 'https://yournextbingeserver.herokuapp.com/popularPeople'
     console.log('starting')
     setTimeout(() => {
       console.log('posting')
@@ -44,7 +44,7 @@ const People = () => {
   const LoadMorePeople = () => {
     setIsPending(true)
     setPage(page => page + 1)
-    axios.post('http://localhost:8080/popularPeople', pageObj)
+    axios.post('https://yournextbingeserver.herokuapp.com/popularPeople', pageObj)
     .then((res) => {
       setIsPending(false);
       setData(res)
