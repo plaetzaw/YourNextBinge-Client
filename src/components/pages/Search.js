@@ -81,7 +81,6 @@ const Search = () => {
       </Card>
       <br/>
       {loading && <h1><LinearProgress/>Loading Search Results</h1>}
-      {/* {results && <SearchCard movies={results}/>} */}
       {movies && <MovieCard movies={results}/>}
       {tvshows && <TVCard tvshows={results}/>}
       {people && <PersonCard people={results}/>}
