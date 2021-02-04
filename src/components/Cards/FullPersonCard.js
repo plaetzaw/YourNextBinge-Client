@@ -9,9 +9,14 @@ const FullPersonCard = ({props}) => {
   const moviecredits = props.data.moviecredits;
   const tvcredits = props.data.tvcredits;
 
-  console.log(info, moviecredits, tvcredits)
+  // console.log(info, moviecredits, tvcredits)
 
-  const moviecreditRender = moviecredits.cast.map((credits) => {
+  let sortedMovieCredits = moviecredits.cast.slice().sort((a,b) => new Date(b.release_date) - new Date(a.release_date))
+  
+  let sortedTVCredits = tvcredits.cast.slice().sort((a,b) => new Date(b.first_air_date) - new Date(a.first_air_date))
+
+
+  const moviecreditRender = sortedMovieCredits.map((credits) => {
     const phChecker = credits.poster_path === null ?   (Placeholder) : (`https://image.tmdb.org/t/p/original/${credits.poster_path}`)
     return <Link to={`/movie/${credits.id}`}><Card
     key={credits.id}
@@ -30,7 +35,7 @@ const FullPersonCard = ({props}) => {
     </Link>
   })
 
-  const tvcreditRender = tvcredits.cast.map((credits) => {
+  const tvcreditRender = sortedTVCredits.map((credits) => {
     const phChecker = credits.poster_path === null ?   (Placeholder) : (`https://image.tmdb.org/t/p/original/${credits.poster_path}`)
     return <Link to={`/tvshow/${credits.id}`}><Card
     key={credits.id}

@@ -11,7 +11,6 @@ const FullPersonPage = () => {
         id: id
     }
     const { data: person, error, isPending } = useFetch('https://yournextbingeserver.herokuapp.com/personInfo/', idObj);    
-    console.log(person)
   return (
     <>
        {error && <div><h1>{error}</h1></div>}

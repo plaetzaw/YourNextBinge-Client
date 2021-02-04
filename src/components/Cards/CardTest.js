@@ -13,7 +13,6 @@ const Test = ({props}) => {
 
     console.log(info, credits, providers, recs)
 
-
     const genres = [] 
     info.genres.forEach((item) => {
     genres.push(item.name + ",")
