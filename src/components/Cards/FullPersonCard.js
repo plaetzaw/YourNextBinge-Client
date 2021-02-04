@@ -12,7 +12,7 @@ const FullPersonCard = ({props}) => {
   // console.log(info, moviecredits, tvcredits)
 
   let sortedMovieCredits = moviecredits.cast.slice().sort((a,b) => new Date(b.release_date) - new Date(a.release_date))
-  
+
   let sortedTVCredits = tvcredits.cast.slice().sort((a,b) => new Date(b.first_air_date) - new Date(a.first_air_date))
 
 
@@ -21,6 +21,7 @@ const FullPersonCard = ({props}) => {
     return <Link to={`/movie/${credits.id}`}><Card
     key={credits.id}
     className="cast-card"
+    width="400"
     >
       <img
       alt={credits.name}
