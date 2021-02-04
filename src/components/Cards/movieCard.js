@@ -5,9 +5,7 @@ import { Button } from '@material-ui/core'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { Link } from 'react-router-dom';
-
-
-
+import Placeholder from '../../utility/200x340.png'
 
 const MovieCard = ({ movies }) => {
 
@@ -30,6 +28,8 @@ const MovieCard = ({ movies }) => {
       };
 
     let markup = movies.data.results.map((movie) => {
+      let phChecker = movie.poster_path === null ? (Placeholder) : (`https://image.tmdb.org/t/p/original/${movie.poster_path}`)
+
         return <div key={movie.id}>
               <Card         
               className="minicard">
@@ -37,7 +37,7 @@ const MovieCard = ({ movies }) => {
               <CardMedia
               component="img"
               alt={movie.title}
-              src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+              src={phChecker}
               />  
                 <Link to={`/movie/${movie.id}`}>
                 <Button>

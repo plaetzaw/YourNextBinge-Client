@@ -5,6 +5,8 @@ import { Button } from '@material-ui/core'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { Link } from 'react-router-dom';
+import Placeholder from '../../utility/200x340.png'
+
 
 const MiniShowCard = ({ tvshows }) => {
     const responsive = {
@@ -26,6 +28,7 @@ const MiniShowCard = ({ tvshows }) => {
       };
 
       let showmarkup = tvshows.data.results.map((tvshow) => {
+        let phChecker = tvshow.poster_path === null ? (Placeholder) : (`https://image.tmdb.org/t/p/original/${tvshow.poster_path}`)
         return <div key={tvshow.id}>
         <Card
             className="minicard">
@@ -33,7 +36,7 @@ const MiniShowCard = ({ tvshows }) => {
               <CardMedia
               component="img"
               alt={tvshow.name}
-              src={`https://image.tmdb.org/t/p/original/${tvshow.poster_path}`}
+              src={phChecker}
               />  
                 <Link to={`/tvshow/${tvshow.id}`}>
                 <Button>

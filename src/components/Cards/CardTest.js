@@ -18,6 +18,7 @@ const Test = ({props}) => {
     genres.push(item.name + ",")
     })
 
+    const posterChecker = info.poster_path === null ? (Placeholder) : (`https://image.tmdb.org/t/p/original/${recs.poster_path}`)
     const tagChecker = info.tagline === "" ?  (<></>) : (<i><h3>"{info.tagline}"</h3></i>)
     const homeChecker = info.homepage === "" ? (<><b>No Homepage Reported</b></>) : (<a href={`${info.homepage}`}>{info.title} Homepage</a>)
 
@@ -78,7 +79,7 @@ const Test = ({props}) => {
         className="card-poster"
         component="img"
         alt={info.title}
-        src={`https://image.tmdb.org/t/p/original/${info.poster_path}`}
+        src={posterChecker}
         >
         </CardMedia>
         {info.overview}

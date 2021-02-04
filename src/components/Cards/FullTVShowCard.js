@@ -9,6 +9,9 @@ const FullTVShowCard = ({props}) => {
   const credits = props.data.credits;
   const recs = props.data.recs;
 
+  const posterChecker = info.poster_path === null ? (Placeholder) : (`https://image.tmdb.org/t/p/original/${recs.poster_path}`)
+
+
   const castRender = credits.cast.map((cast) => {
     const phChecker = cast.profile_path === null ?   (Placeholder) : (`https://image.tmdb.org/t/p/original/${cast.profile_path}`)
     return <Link to ={`/person/${cast.id}`}><Card
@@ -81,7 +84,7 @@ const productionChecker = info.in_production === true ? (<>Series in Production<
       className="card-poster"
       component="img"
       alt={info.name}
-      src={`https://image.tmdb.org/t/p/original/${info.poster_path}`}
+      src={posterChecker}
       />
       {info.overview}
       <br/>
@@ -89,7 +92,7 @@ const productionChecker = info.in_production === true ? (<>Series in Production<
       <br/>
       <div className="p-grid">
       <Paper className="p-col-4">
-      First Episdoe Aired: {info.first_air_date}
+      First Episode Aired: {info.first_air_date}
       </Paper>
       <Paper className="p-col-4">
       Last Episode Aired: {info.last_air_date}

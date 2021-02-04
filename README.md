@@ -10,9 +10,9 @@ On a full movie/tvshow page- directing to another title doesn't happen correctly
 
 I want to resize the primary posters on the full info card, have to mess with the API config.
 
-Need to add placeholder posters for cards, instead of just the minicards.
+~~Need to add placeholder posters for cards, instead of just the minicards.~~
 
-Need to make titles/characters flow to a second or third line instead of just making the card expand super wide.
+~~Need to make titles/characters flow to a second or third line instead of just making the card expand super wide.~~
 
 Need to add streaming placeholders still.
 

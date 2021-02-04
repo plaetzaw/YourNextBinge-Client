@@ -12,8 +12,9 @@ const FullPersonCard = ({props}) => {
   // console.log(info, moviecredits, tvcredits)
 
   let sortedMovieCredits = moviecredits.cast.slice().sort((a,b) => new Date(b.release_date) - new Date(a.release_date))
-
   let sortedTVCredits = tvcredits.cast.slice().sort((a,b) => new Date(b.first_air_date) - new Date(a.first_air_date))
+
+  const posterChecker = info.profile_path === null ? (Placeholder) : (`https://image.tmdb.org/t/p/original/${info.profile_path}`)
 
 
   const moviecreditRender = sortedMovieCredits.map((credits) => {
@@ -63,7 +64,7 @@ const FullPersonCard = ({props}) => {
         className="poster"
         component="img"
         alt={info.name}
-        src={`https://image.tmdb.org/t/p/original/${info.profile_path}`}
+        src={posterChecker}
         />
         <br/>
     <div> <h3>{info.biography}</h3></div>

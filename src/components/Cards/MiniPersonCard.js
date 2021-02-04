@@ -5,6 +5,8 @@ import { Button } from '@material-ui/core'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { Link } from 'react-router-dom';
+import Placeholder from '../../utility/200x340.png'
+
 
 const MiniPersonCard = ({ people }) => {
     const responsive = {
@@ -26,6 +28,7 @@ const MiniPersonCard = ({ people }) => {
       };
 
       let personmarkup = people.data.results.map((person) => {
+        let phChecker = person.profile_path === null ? (Placeholder) : (`https://image.tmdb.org/t/p/original/${person.profile_path}`)
         return <div key={person.id}>
             <Card
             className="minicard">
@@ -33,7 +36,7 @@ const MiniPersonCard = ({ people }) => {
               <CardMedia
               component="img"
               alt={person.title}
-              src={`https://image.tmdb.org/t/p/original/${person.profile_path}`}
+              src={phChecker}
               />  
                 <Link to={`/person/${person.id}`}>
                 <Button>
