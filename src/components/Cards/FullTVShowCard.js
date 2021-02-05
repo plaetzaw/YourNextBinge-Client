@@ -9,7 +9,7 @@ const FullTVShowCard = ({props}) => {
   const credits = props.data.credits;
   const recs = props.data.recs;
 
-  const posterChecker = info.poster_path === null ? (Placeholder) : (`https://image.tmdb.org/t/p/original/${recs.poster_path}`)
+  const posterChecker = info.poster_path === null ? (Placeholder) : (`https://image.tmdb.org/t/p/original/${info.poster_path}`)
 
 
   const castRender = credits.cast.map((cast) => {
@@ -80,13 +80,22 @@ const productionChecker = info.in_production === true ? (<>Series in Production<
       <h1>{info.name}</h1>
       {tagChecker}
       {genres}
+      <br/>
+      <br/>
+      <div className="p-grid">
+      {/* <Paper className="p-col-6"> */}
       <CardMedia
       className="card-poster"
       component="img"
       alt={info.name}
       src={posterChecker}
       />
+      {/* </Paper> */}
+      {/* <Paper className="p-col-6"> */}
       {info.overview}
+      {/* </Paper> */}
+      </div>
+      
       <br/>
       <br/>
       <br/>
