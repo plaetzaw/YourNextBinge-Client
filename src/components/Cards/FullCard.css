@@ -23,7 +23,7 @@
 .card-poster {
   display: grid;
   place-items: center;
-  width: 500px;
+  /* width: 500px; */
 }
 
 .card h1 {

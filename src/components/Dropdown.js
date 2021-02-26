@@ -1,12 +1,12 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { MenuItems  } from './MenuItems'
+import { MenuItems } from './MenuItems'
 import './Dropdown.css'
 
-function Dropdown() {
-  const [click, setClick] = useState(false);
+function Dropdown () {
+  const [click, setClick] = useState(false)
 
-  const handleClick = () => setClick(!click);
+  const handleClick = () => setClick(!click)
 
   return (
     <>
@@ -25,11 +25,11 @@ function Dropdown() {
                 {item.title}
               </Link>
             </li>
-          );
+          )
         })}
       </ul>
     </>
-  );
+  )
 }
 
-export default Dropdown;
+export default Dropdown
