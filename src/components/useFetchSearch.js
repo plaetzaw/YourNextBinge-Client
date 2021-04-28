@@ -7,10 +7,8 @@ const useFetch = (url, query) => {
   const [error, setError] = useState(null)
 
   useEffect(() => {
-    const abortCont = new AbortController()
-
     setTimeout(() => {
-      axios.post(url, query, { signal: abortCont.signal })
+      axios.post(url, query)
         .then(data => {
           setIsPending(false)
           setData(data)
@@ -28,8 +26,7 @@ const useFetch = (url, query) => {
     }, 1000)
 
     // abort the fetch
-    return () => abortCont.abort()
-  }, [url])
+  }, [])
 
   return { data, isPending, error }
 }
