@@ -7,10 +7,8 @@ const useFetch = (url, id) => {
   const [error, setError] = useState(null)
 
   useEffect(() => {
-    const abortCont = new AbortController()
-
     setTimeout(() => {
-      axios.post(url, id, { signal: abortCont.signal })
+      axios.post(url, id)
       // .then(res => {
       //   console.log(res)
       //   if (!res.ok) { // error coming back from server
@@ -35,10 +33,9 @@ const useFetch = (url, id) => {
     }, 1000)
 
     // abort the fetch
-    return () => abortCont.abort()
     // [adding the ID casues an infinite loop]
     // eslint-disable-next-line
-  }, [url])
+  }, [])
 
   return { data, isPending, error }
 }

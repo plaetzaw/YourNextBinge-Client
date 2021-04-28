@@ -14,7 +14,7 @@ const FullPersonCard = ({ props }) => {
   const sortedMovieCredits = moviecredits.cast.slice().sort((a, b) => new Date(b.release_date) - new Date(a.release_date))
   const sortedTVCredits = tvcredits.cast.slice().sort((a, b) => new Date(b.first_air_date) - new Date(a.first_air_date))
 
-  const posterChecker = info.profile_path === null ? (Placeholder) : (`https://image.tmdb.org/t/p/original/${info.profile_path}`)
+  const posterChecker = info.profile_path === null ? (Placeholder) : (`https://image.tmdb.org/t/p/w500/${info.profile_path}`)
 
   const moviecreditRender = sortedMovieCredits.map((credits) => {
     const phChecker = credits.poster_path === null ? (Placeholder) : (`https://image.tmdb.org/t/p/original/${credits.poster_path}`)
@@ -34,7 +34,7 @@ const FullPersonCard = ({ props }) => {
         </li>
         <br />
         <i>Released: {credits.release_date}</i>
-      </Card>
+                                        </Card>
       </Link>
     )
   })
@@ -56,7 +56,7 @@ const FullPersonCard = ({ props }) => {
         </li>
         <br />
         <i>Premiered: {credits.first_air_date}</i>
-      </Card>
+                                         </Card>
       </Link>
     )
   })
