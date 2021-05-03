@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import Placeholder from '../../utility/200x340.png'
 import './FullCard.css'
 import 'primeflex/primeflex.css'
+// import useFetch from '../useFetchID'
+// import axios from 'axios'
 
 const Test = ({ props }) => {
   const info = props.data.info
@@ -24,21 +26,22 @@ const Test = ({ props }) => {
   const castRender = credits.cast.map((cast) => {
     const phChecker = cast.profile_path === null ? (Placeholder) : (`https://image.tmdb.org/t/p/original/${cast.profile_path}`)
     return (
-      <Link to={`/person/${cast.id}`}>
-        <Card
-          key={cast.id}
-          className='cast-card'
-        >
-          <img
-            src={phChecker}
-            height='300px'
-            alt={cast.name}
-          />
-          <li key={cast.id}><i>{cast.name}</i> as <br />
-            <b>{cast.character}</b>
-          </li>
-        </Card>
-      </Link>
+    // <Link to={`/person/${cast.id}`}>
+      <Card
+        key={cast.id}
+        className='cast-card'
+        // onClick={axios.post('https://yournextbingeserver.herokuapp.com/fullMovieInfo/', idObj)}
+      >
+        <img
+          src={phChecker}
+          height='300px'
+          alt={cast.name}
+        />
+        <li key={cast.id}><i>{cast.name}</i> as <br />
+          <b>{cast.character}</b>
+        </li>
+      </Card>
+    // </Link>
     )
   })
 

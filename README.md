@@ -1,5 +1,11 @@
 YourNextBinge is meant to help users find their next title to bingewatch.
 
+To view the server-side code for this project, [click here](https://github.com/plaetzaw/MyNextBingeV2-Server)
+
+This is the third project I've built using The Moving Database API.
+
+- Coming Soon: To read my medium article about how I've done each project differently click here.
+
 Powered by The Movie Database API
 
 https://yournextbinge.netlify.app/
@@ -13,7 +19,5 @@ I want to resize the primary posters on the full info card, have to mess with th
 ~~Need to add placeholder posters for cards, instead of just the minicards.~~
 
 ~~Need to make titles/characters flow to a second or third line instead of just making the card expand super wide.~~
-
-Need to add streaming placeholders still.
 
 404 Page not working on an invalid URL
