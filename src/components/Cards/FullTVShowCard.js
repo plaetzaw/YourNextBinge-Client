@@ -14,53 +14,63 @@ const FullTVShowCard = ({ props }) => {
   const castRender = credits.cast.map((cast) => {
     const phChecker = cast.profile_path === null ? (Placeholder) : (`https://image.tmdb.org/t/p/original/${cast.profile_path}`)
     return (
-      <Link to={`/person/${cast.id}`}><Card
+      <div
         key={cast.id}
-        className='cast-card'
-        onClick={() => {
-          const idObj = {
-            id: cast.id
-          }
-          console.log(idObj)
-        }}
-                                      >
-        <img
-          src={phChecker}
-          height='300px'
-          alt={cast.name}
-        />
-        <li className='centerText'><i>{cast.name}</i> as <br />
-          <b>{cast.character}</b>
-        </li>
-      </Card>
-      </Link>
+      >
+        <Link to={`/person/${cast.id}`}>
+          <Card
+            key={cast.id}
+            className='cast-card'
+            onClick={() => {
+              const idObj = {
+                id: cast.id
+              }
+              console.log(idObj)
+            }}
+          >
+            <img
+              src={phChecker}
+              height='300px'
+              alt={cast.name}
+            />
+            <li className='centerText'><i>{cast.name}</i> as <br />
+              <b>{cast.character}</b>
+            </li>
+          </Card>
+        </Link>
+      </div>
     )
   })
 
   const recRender = recs.results.map((recs) => {
     const ppChecker = recs.poster_path === null ? (Placeholder) : (`https://image.tmdb.org/t/p/original/${recs.poster_path}`)
     return (
-      <Link to={`/tvshow/${recs.id}`}><Card
+      <div
         key={recs.id}
-        className='cast-card'
-        onClick={() => {
-          const idObj = {
-            id: recs.id
-          }
-          console.log(idObj)
-        }}
-                                      >
-        <img
-          alt={recs.name}
-          src={ppChecker}
-          height='400px'
-        />
-        <br />
-        <div>
-          <Paper><b>{recs.name}</b></Paper>
-        </div>
-      </Card>
-      </Link>
+      >
+        <Link to={`/tvshow/${recs.id}`}>
+          <Card
+            key={recs.id}
+            className='cast-card'
+            onClick={() => {
+              const idObj = {
+                id: recs.id
+              }
+              console.log(idObj)
+            }}
+          >
+            <img
+              alt={recs.name}
+              src={ppChecker}
+              height='400px'
+            />
+            <br />
+            <div>
+              <Paper><b>{recs.name}</b></Paper>
+            </div>
+          </Card>
+        </Link>
+      </div>
     )
   })
 

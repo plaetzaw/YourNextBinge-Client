@@ -33,7 +33,7 @@ const MiniShowCard = ({ tvshows }) => {
         <Card
           className='minicard'
         >
-          {tvshow.name}
+          <h1>{tvshow.name}</h1>
           <CardMedia
             component='img'
             alt={tvshow.name}

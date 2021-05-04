@@ -19,45 +19,55 @@ const FullPersonCard = ({ props }) => {
   const moviecreditRender = sortedMovieCredits.map((credits) => {
     const phChecker = credits.poster_path === null ? (Placeholder) : (`https://image.tmdb.org/t/p/original/${credits.poster_path}`)
     return (
-      <Link to={`/movie/${credits.id}`}><Card
+      <div
         key={credits.id}
-        className='cast-card'
-        width='400'
-                                        >
-        <img
-          alt={credits.name}
-          src={phChecker}
-          height='400'
-        />
-        <li><i>in {credits.title}</i> as <br />
-          <b>{credits.character}</b>
-        </li>
-        <br />
-        <i>Released: {credits.release_date}</i>
-                                        </Card>
-      </Link>
+      >
+        <Link to={`/movie/${credits.id}`}>
+          <Card
+            key={credits.id}
+            className='cast-card'
+            width='400'
+          >
+            <img
+              alt={credits.name}
+              src={phChecker}
+              height='400'
+            />
+            <li><i>in {credits.title}</i> as <br />
+              <b>{credits.character}</b>
+            </li>
+            <br />
+            <i>Released: {credits.release_date}</i>
+          </Card>
+        </Link>
+      </div>
     )
   })
 
   const tvcreditRender = sortedTVCredits.map((credits) => {
     const phChecker = credits.poster_path === null ? (Placeholder) : (`https://image.tmdb.org/t/p/original/${credits.poster_path}`)
     return (
-      <Link to={`/tvshow/${credits.id}`}><Card
+      <div
         key={credits.id}
-        className='cast-card'
-                                         >
-        <img
-          alt={credits.name}
-          src={phChecker}
-          height='400'
-        />
-        <li><i>in {credits.name}</i> as <br />
-          <b>{credits.character}</b>
-        </li>
-        <br />
-        <i>Premiered: {credits.first_air_date}</i>
-                                         </Card>
-      </Link>
+      >
+        <Link to={`/tvshow/${credits.id}`}>
+          <Card
+            key={credits.id}
+            className='cast-card'
+          >
+            <img
+              alt={credits.name}
+              src={phChecker}
+              height='400'
+            />
+            <li><i>in {credits.name}</i> as <br />
+              <b>{credits.character}</b>
+            </li>
+            <br />
+            <i>Premiered: {credits.first_air_date}</i>
+          </Card>
+        </Link>
+      </div>
     )
   })
 

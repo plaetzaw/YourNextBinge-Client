@@ -34,7 +34,7 @@ const MovieCard = ({ movies }) => {
         <Card
           className='minicard'
         >
-          {movie.title}
+          <h1>{movie.title}</h1>
           <CardMedia
             component='img'
             alt={movie.title}

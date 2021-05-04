@@ -33,7 +33,7 @@ const MiniPersonCard = ({ people }) => {
         <Card
           className='minicard'
         >
-          {person.name}
+          <h1>{person.name}</h1>
           <CardMedia
             component='img'
             alt={person.title}

@@ -55,7 +55,7 @@ const TVShows = () => {
   return (
     <div className='container'>
       <h1 className='display'>TV Shows</h1>
-      <div className='load-btn-row'><button className='load-btn' onClick={LoadMoreShows}>Load More Shows</button></div>
+      {!isPending && <div className='load-btn-row'><button className='load-btn' onClick={LoadMoreShows}>Load More Shows</button></div>}
       {error && <div><h1>{error}</h1></div>}
       {isPending && <div className='loading'><h1><LinearProgress />Loading...</h1></div>}
       {data && <MiniShowCard tvshows={data} />}

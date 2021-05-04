@@ -40,7 +40,11 @@ const MovieCard = ({ movies }) => {
         key={movie.id}
         className='minicard'
       >
-        <h2>{movie.title}</h2>
+        <h1
+          classname='minicard-title'
+        >
+          {movie.title}
+        </h1>
         <Card>
           <CardMedia
             component='img'
