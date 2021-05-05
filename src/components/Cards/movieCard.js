@@ -30,10 +30,11 @@ const MovieCard = ({ movies }) => {
     const phChecker = movie.poster_path === null ? (Placeholder) : (`https://image.tmdb.org/t/p/original/${movie.poster_path}`)
 
     return (
-      <div key={movie.id}>
-        <Card
-          className='minicard'
-        >
+      <div
+        key={movie.id}
+        className='minicard'
+      >
+        <Card>
           <h1>{movie.title}</h1>
           <CardMedia
             component='img'

@@ -16,6 +16,13 @@
   font-size: 2.5rem;
 }
 
+.navbar-logo:hover {
+  color: black;
+  background-color: whitesmoke;
+  transition: 500ms;
+  border-radius: 0;
+}
+
 .fa-firstdraft {
   margin-left: 0.5rem;
   font-size: 1.6rem;
@@ -105,6 +112,13 @@
     left: 0;
     font-size: 1.4rem;
     /* transform: translate(25%, 50%); */
+  }
+
+  .navbar-logo:hover {
+    color: black;
+    background-color: whitesmoke;
+    transition: 500ms;
+    border-radius: 0;
   }
 
   .menu-icon {

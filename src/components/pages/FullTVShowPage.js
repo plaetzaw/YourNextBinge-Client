@@ -6,10 +6,7 @@ import LinearProgress from '@material-ui/core/LinearProgress'
 
 const FullMovieCard = () => {
   const { id } = useParams()
-  const idObj = {
-    id: id
-  }
-  const { data: tvshow, error, isPending } = useFetch('https://yournextbingeserver.herokuapp.com/fullshowInfo/', idObj)
+  const { data: tvshow, error, isPending } = useFetch('https://yournextbingeserver.herokuapp.com/fullshowInfo/', id)
   console.log(tvshow)
   return (
     <>

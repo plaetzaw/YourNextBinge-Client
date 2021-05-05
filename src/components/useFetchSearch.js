@@ -7,23 +7,21 @@ const useFetch = (url, query) => {
   const [error, setError] = useState(null)
 
   useEffect(() => {
-    setTimeout(() => {
-      axios.post(url, query)
-        .then(data => {
-          setIsPending(false)
-          setData(data)
-          setError(null)
-        })
-        .catch(err => {
-          if (err.name === 'AbortError') {
-            console.log('fetch aborted')
-          } else {
+    axios.post(url, query)
+      .then(data => {
+        setIsPending(false)
+        setData(data)
+        setError(null)
+      })
+      .catch(err => {
+        if (err.name === 'AbortError') {
+          console.log('fetch aborted')
+        } else {
           // auto catches network / connection error
-            setIsPending(false)
-            setError(err.message)
-          }
-        })
-    }, 1000)
+          setIsPending(false)
+          setError(err.message)
+        }
+      })
 
     // abort the fetch
   }, [])

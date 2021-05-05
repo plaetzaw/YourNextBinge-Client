@@ -13,7 +13,10 @@ const FullMovieCard = () => {
   const idObj = {
     id: id
   }
-  const { data: movie, error, isPending } = useFetch('https://yournextbingeserver.herokuapp.com/fullMovieInfo/', idObj)
+  // const { data: movie, error, isPending } = useFetch('https://yournextbingeserver.herokuapp.com/fullMovieInfo/', idObj)
+  const { data: movie, error, isPending } = useFetch('https://yournextbingeserver.herokuapp.com/fullMovieInfo/', id)
+
+  console.log(' ii am alive', id)
 
   return (
     <>

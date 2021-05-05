@@ -6,10 +6,7 @@ import LinearProgress from '@material-ui/core/LinearProgress'
 
 const FullPersonPage = () => {
   const { id } = useParams()
-  const idObj = {
-    id: id
-  }
-  const { data: person, error, isPending } = useFetch('https://yournextbingeserver.herokuapp.com/personInfo/', idObj)
+  const { data: person, error, isPending } = useFetch('https://yournextbingeserver.herokuapp.com/personInfo/', id)
   return (
     <>
       {error && <div><h1>{error}</h1></div>}
