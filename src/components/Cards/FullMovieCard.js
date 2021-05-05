@@ -10,9 +10,6 @@ import './FullCard.css'
 
 const FullMovieCard = () => {
   const { id } = useParams()
-  const idObj = {
-    id: id
-  }
   // const { data: movie, error, isPending } = useFetch('https://yournextbingeserver.herokuapp.com/fullMovieInfo/', idObj)
   const { data: movie, error, isPending } = useFetch('https://yournextbingeserver.herokuapp.com/fullMovieInfo/', id)
 
