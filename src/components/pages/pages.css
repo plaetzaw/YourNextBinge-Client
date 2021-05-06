@@ -120,6 +120,7 @@
 }
 
 .minicard {
+  background-color: red;
   display: grid;
   place-items: center;
   text-align: center;
