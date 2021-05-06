@@ -15,9 +15,7 @@ const People = () => {
   // const {data: people, isPending, error} = useFetch('https://yournextbingeserver.herokuapp.com/popularPeople');
   useEffect(() => {
     const url = 'https://yournextbingeserver.herokuapp.com/popularPeople'
-    console.log('starting')
     setTimeout(() => {
-      console.log('posting')
       axios.post(url)
         .then(data => {
           setIsPending(false)
@@ -32,9 +30,6 @@ const People = () => {
             setError(err.message)
           }
         })
-    }, 1000)
-
-    // abort the fetch
   }, [])
 
   const pageObj = {

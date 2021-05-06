@@ -15,26 +15,20 @@ const TVShows = () => {
 
   useEffect(() => {
     const url = 'https://yournextbingeserver.herokuapp.com/popularShows'
-    console.log('starting')
-    setTimeout(() => {
-      console.log('posting')
-      axios.post(url)
-        .then(data => {
+    axios.post(url)
+      .then(data => {
+        setIsPending(false)
+        setData(data)
+        setError(null)
+      })
+      .catch(err => {
+        if (err.name === 'AbortError') {
+          console.log('fetch aborted')
+        } else {
           setIsPending(false)
-          setData(data)
-          setError(null)
-        })
-        .catch(err => {
-          if (err.name === 'AbortError') {
-            console.log('fetch aborted')
-          } else {
-            setIsPending(false)
-            setError(err.message)
-          }
-        })
-    }, 1000)
-
-    // abort the fetch
+          setError(err.message)
+        }
+      })
   }, [])
 
   const pageObj = {

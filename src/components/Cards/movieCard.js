@@ -34,19 +34,17 @@ const MovieCard = ({ movies }) => {
         key={movie.id}
         className='minicard'
       >
-        <Card>
-          <h1>{movie.title}</h1>
-          <CardMedia
-            component='img'
-            alt={movie.title}
-            src={phChecker}
-          />
-          <Link to={`/movie/${movie.id}`}>
-            <Button>
-              <p className='minicard-btn'><b>See Movie Information</b></p>
-            </Button>
-          </Link>
-        </Card>
+        <h1>{movie.title}</h1>
+        <CardMedia
+          component='img'
+          alt={movie.title}
+          src={phChecker}
+        />
+        <Link to={`/movie/${movie.id}`}>
+          <Button>
+            <p className='minicard-btn'><b>See Movie Information</b></p>
+          </Button>
+        </Link>
       </div>
     )
   })
