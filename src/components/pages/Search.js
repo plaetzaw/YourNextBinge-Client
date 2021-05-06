@@ -44,16 +44,6 @@ const Search = () => {
         } else if (searchCategory === 'person') {
           setPeople(true)
         }
-        // switch (searchTerm){
-        //     case (searchTerm === 'movie'):
-        //     setMovies(true)
-        //     break;
-        //     case (searchTerm === 'tv'):
-        //     setTVShows(true)
-        //     break;
-        //     case (searchTerm === 'person'):
-        //     setPeople(true)
-        // }
       })
   }
   return (

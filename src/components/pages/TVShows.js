@@ -11,7 +11,6 @@ const TVShows = () => {
   const [data, setData] = useState(null)
   const [isPending, setIsPending] = useState(true)
   const [error, setError] = useState(null)
-  // const {data: tvshows, isPending, error} = useFetch('https://yournextbingeserver.herokuapp.com/popularShows');
 
   useEffect(() => {
     const url = 'https://yournextbingeserver.herokuapp.com/popularShows'

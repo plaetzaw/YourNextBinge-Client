@@ -1,5 +1,5 @@
 import React from 'react'
-import Card from '@material-ui/core/Card'
+// import Card from '@material-ui/core/Card'
 import { CardMedia, Button } from '@material-ui/core'
 
 import Carousel from 'react-multi-carousel'

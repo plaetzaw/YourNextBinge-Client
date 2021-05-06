@@ -12,10 +12,6 @@ const Movies = () => {
   const [isPending, setIsPending] = useState(true)
   const [error, setError] = useState(null)
 
-  // let {data: movies, isPending, error} = useFetchUpdate('https://yournextbingeserver.herokuapp.com/popularMovies', pageObj);
-  // reverted from the imported fetch so I could use the data and pass it into the cards
-  // with dynamic updates.
-
   useEffect(() => {
     const url = 'https://yournextbingeserver.herokuapp.com/popularMovies'
     axios.post(url)
