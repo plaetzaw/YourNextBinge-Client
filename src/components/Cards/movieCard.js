@@ -1,5 +1,5 @@
 import React from 'react'
-import Card from '@material-ui/core/Card'
+// import Card from '@material-ui/core/Card'
 import { CardMedia, Button } from '@material-ui/core'
 
 import Carousel from 'react-multi-carousel'
@@ -34,19 +34,17 @@ const MovieCard = ({ movies }) => {
         key={movie.id}
         className='minicard'
       >
-        <Card>
-          <h1>{movie.title}</h1>
-          <CardMedia
-            component='img'
-            alt={movie.title}
-            src={phChecker}
-          />
-          <Link to={`/movie/${movie.id}`}>
-            <Button>
-              <p className='minicard-btn'><b>See Movie Information</b></p>
-            </Button>
-          </Link>
-        </Card>
+        <h1>{movie.title}</h1>
+        <CardMedia
+          component='img'
+          alt={movie.title}
+          src={phChecker}
+        />
+        <Link to={`/movie/${movie.id}`}>
+          <Button>
+            <p className='minicard-btn'><b>See Movie Information</b></p>
+          </Button>
+        </Link>
       </div>
     )
   })

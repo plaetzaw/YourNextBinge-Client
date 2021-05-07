@@ -12,29 +12,22 @@ const People = () => {
   const [isPending, setIsPending] = useState(true)
   const [error, setError] = useState(null)
 
-  // const {data: people, isPending, error} = useFetch('https://yournextbingeserver.herokuapp.com/popularPeople');
   useEffect(() => {
     const url = 'https://yournextbingeserver.herokuapp.com/popularPeople'
-    console.log('starting')
-    setTimeout(() => {
-      console.log('posting')
-      axios.post(url)
-        .then(data => {
+    axios.post(url)
+      .then(data => {
+        setIsPending(false)
+        setData(data)
+        setError(null)
+      })
+      .catch(err => {
+        if (err.name === 'AbortError') {
+          console.log('fetch aborted')
+        } else {
           setIsPending(false)
-          setData(data)
-          setError(null)
-        })
-        .catch(err => {
-          if (err.name === 'AbortError') {
-            console.log('fetch aborted')
-          } else {
-            setIsPending(false)
-            setError(err.message)
-          }
-        })
-    }, 1000)
-
-    // abort the fetch
+          setError(err.message)
+        }
+      })
   }, [])
 
   const pageObj = {

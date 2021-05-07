@@ -12,32 +12,22 @@ const Movies = () => {
   const [isPending, setIsPending] = useState(true)
   const [error, setError] = useState(null)
 
-  // let {data: movies, isPending, error} = useFetchUpdate('https://yournextbingeserver.herokuapp.com/popularMovies', pageObj);
-  // reverted from the imported fetch so I could use the data and pass it into the cards
-  // with dynamic updates.
-
   useEffect(() => {
     const url = 'https://yournextbingeserver.herokuapp.com/popularMovies'
-    console.log('starting')
-    setTimeout(() => {
-      console.log('posting')
-      axios.post(url)
-        .then(data => {
+    axios.post(url)
+      .then(data => {
+        setIsPending(false)
+        setData(data)
+        setError(null)
+      })
+      .catch(err => {
+        if (err.name === 'AbortError') {
+          console.log('fetch aborted')
+        } else {
           setIsPending(false)
-          setData(data)
-          setError(null)
-        })
-        .catch(err => {
-          if (err.name === 'AbortError') {
-            console.log('fetch aborted')
-          } else {
-            setIsPending(false)
-            setError(err.message)
-          }
-        })
-    }, 1000)
-
-    // abort the fetch
+          setError(err.message)
+        }
+      })
   }, [])
 
   const pageObj = {
