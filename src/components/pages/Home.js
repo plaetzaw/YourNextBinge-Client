@@ -1,6 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import TMDB from '../../utility/TMDB.png'
+import axios from 'axios'
+
 const Home = () => {
+  /// This is an optimization to wake up the Heroku server when a user arrives on the application
+  /// Hopefully this will lower the waiting time on the initial Heroku wakeup
+  useEffect(() => {
+    const url = 'https://yournextbingeserver.herokuapp.com/home'
+    // 'http://localhost:8080/home'
+    axios.post(url)
+      .then(data => {
+        console.log(data)
+      })
+      .catch(err => {
+        if (err.name === 'AbortError') {
+          console.log('fetch aborted')
+        }
+      })
+  }, [])
+
   return (
     <>
       <h1 className='home-header'>Welcome to YourNextBinge!</h1>
