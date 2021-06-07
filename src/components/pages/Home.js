@@ -7,10 +7,9 @@ const Home = () => {
   /// Hopefully this will lower the waiting time on the initial Heroku wakeup
   useEffect(() => {
     const url = 'https://yournextbingeserver.herokuapp.com/home'
-    // 'http://localhost:8080/home'
     axios.post(url)
       .then(data => {
-        console.log(data)
+        // console.log(data)
       })
       .catch(err => {
         if (err.name === 'AbortError') {

@@ -22,7 +22,7 @@ const TVShows = () => {
       })
       .catch(err => {
         if (err.name === 'AbortError') {
-          console.log('fetch aborted')
+          // console.log('fetch aborted')
         } else {
           setIsPending(false)
           setError(err.message)
@@ -41,7 +41,6 @@ const TVShows = () => {
       .then((res) => {
         setIsPending(false)
         setData(res)
-        console.log(res)
       })
   }
 

@@ -32,7 +32,7 @@ const Search = () => {
       category: searchCategory,
       term: searchTerm
     }
-    console.log(searchObj)
+    // console.log(searchObj)
     axios.post('https://yournextbingeserver.herokuapp.com/search', searchObj)
       .then((res) => {
         setLoading(false)

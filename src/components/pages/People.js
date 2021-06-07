@@ -22,7 +22,7 @@ const People = () => {
       })
       .catch(err => {
         if (err.name === 'AbortError') {
-          console.log('fetch aborted')
+          // console.log('fetch aborted')
         } else {
           setIsPending(false)
           setError(err.message)

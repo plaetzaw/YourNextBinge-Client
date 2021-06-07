@@ -21,12 +21,11 @@ const FullTVShowCard = ({ props }) => {
           <Card
             key={cast.id}
             className='cast-card'
-            onClick={() => {
-              const idObj = {
-                id: cast.id
-              }
-              console.log(idObj)
-            }}
+            // onClick={() => {
+            //   const idObj = {
+            //     id: cast.id
+            //   }
+            // }}
           >
             <img
               src={phChecker}
@@ -52,12 +51,11 @@ const FullTVShowCard = ({ props }) => {
           <Card
             key={recs.id}
             className='cast-card'
-            onClick={() => {
-              const idObj = {
-                id: recs.id
-              }
-              console.log(idObj)
-            }}
+            // onClick={() => {
+            //   const idObj = {
+            //     id: recs.id
+            //   }
+            // }}
           >
             <img
               alt={recs.name}
@@ -87,7 +85,7 @@ const FullTVShowCard = ({ props }) => {
 
   const productionChecker = info.in_production === true ? (<>Series in Production</>) : (<>Series no longer in Production</>)
 
-  console.log(info, credits, recs)
+  // console.log(info, credits, recs)
   return (
     <div className='cardBackground'>
       <Card className='card'>
