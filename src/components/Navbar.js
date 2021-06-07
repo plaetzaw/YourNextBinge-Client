@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Button from './Button'
+import Logo from './Logo'
 import './Navbar.css'
 // import Dropdown from './Dropdown'
 
@@ -31,7 +32,8 @@ const Navbar = () => {
     <>
       <nav className='navbar'>
         <Link to='/' className='navbar-logo'>
-          <h1>YourNextBinge</h1>
+          <Logo />
+          {/* <h1>YourNextBinge</h1> */}
         </Link>
         <div className='menu-icon' onClick={handleClick}>
           <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
