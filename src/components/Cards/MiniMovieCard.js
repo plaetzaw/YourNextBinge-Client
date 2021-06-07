@@ -27,7 +27,6 @@ const MovieCard = ({ movies }) => {
   // const dispatch = useDispatch();
 
   //  function handleMovie (){
-  //    console.log("I have been clicked ID:" + id)
   //    let idObj = {
   //      id: id
   //    }
