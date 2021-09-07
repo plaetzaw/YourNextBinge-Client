@@ -1,3 +1,6 @@
+# YourNextBinge
+
+## Overview
 [YourNextBinge](https://yournextbinge.netlify.app/) is meant to help users find their next title to bingewatch.
 
 To view the server-side code for this project, [click here](https://github.com/plaetzaw/MyNextBingeV2-Server)
@@ -10,13 +13,13 @@ Powered by [The Movie Database API](https://developers.themoviedb.org/3)
 
 https://yournextbinge.netlify.app/
 
-Frontend technologies used:
+## Frontend technologies used:
 
 - HTML/CSS/JS
 - React (Framework)
 - Netlify (Deployment)
 
-Frontend known issues:
+## Frontend known issues:
 
 - On a full movie/tvshow page- directing to another title doesn't happen correctly, the id is put into the URL but the component doesn't re-render.
 
